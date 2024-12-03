@@ -22,8 +22,8 @@ pipeline {
         
         stage('publish') {
             agent {
-        label "linux"
-    }
+                label 'windows'
+            }
             steps {
                 junit stdioRetention: '', testResults: 'api-gateway/target/surefire-reports/*.xml'
                 archiveArtifacts 'api-gateway/target/*.jar'
